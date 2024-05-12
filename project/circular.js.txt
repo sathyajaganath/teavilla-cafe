@@ -1,0 +1,20 @@
+import React from "react";
+import teavilla1 from "../images/teavilla1.webp";
+import teavilla2 from "../images/teavilla2.webp";
+import teavilla3 from "../images/teavilla3.webp";
+import teavilla4 from "../images/teavilla4.webp";
+import teavilla5 from "../images/teavilla5.webp";
+function Circular(){
+    return(
+        <>
+        <div className="circular-image">
+            <img className="img1" src={teavilla1} alt=""></img>
+            <img src={teavilla2} alt=""></img>
+            <img src={teavilla3} alt=""></img>
+            <img src={teavilla4} alt=""></img>
+            <img  className="img2" src={teavilla5} alt=""></img>
+        </div>
+        </>
+    );
+}
+export default Circular;

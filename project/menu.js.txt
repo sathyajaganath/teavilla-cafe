@@ -1,0 +1,122 @@
+import React from "react";
+import { UncontrolledCarousel } from "reactstrap";
+import menu from '../images/menupage.png'
+import kiosk1 from '../images/kiosk1.png';
+import kiosk2 from '../images/kiosk2.png';
+import kiosk3 from '../images/kiosk3.png';
+import kiosk4 from '../images/kiosk4.png';
+import kiosk5 from '../images/kiosk5.png';
+import kiosk6 from '../images/kiosk6.png';
+import cafe1 from '../images/cafe1.png';
+import cafe2 from '../images/cafe2.png';
+import cafe3 from '../images/cafe3.png';
+import cafe4 from '../images/cafe4.png';
+import cafe5 from '../images/cafe5.png';
+import cafe6 from '../images/cafe6.png';
+import left from '../images/left-moving.gif';
+import right from '../images/right-moving.gif';
+function Order(){
+    return(
+        <>
+        <div className="dishes">
+            <p className="our-menu">Our Menu</p>
+            <p className="proud-to">At Tea Villa Cafe, we are proud to offer a diverse, 
+            vegetarian multi-cuisine menu that is sure to satisfy all your taste
+            buds. From mouth-watering starters to delectable main course dishes,
+            our menu has something for everyone. We make sure that every dish
+            is made with the freshest ingredients, cooked to perfection, 
+            and served with warmth and love.</p>
+        </div>
+        <div className="slides3">
+        <div className="slide-left">
+        <UncontrolledCarousel 
+            items ={[
+                {
+                altText: 'Slide 1',
+                key: 1,
+                src:cafe1
+                
+                },
+                {
+                altText: 'Slide 2',
+                key: 2,
+                src: cafe2
+                },
+                {
+                altText: 'Slide 3',
+                key: 3,
+                src: cafe3
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 4,
+                    src: cafe4
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 5,
+                    src: cafe5
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 6,
+                    src: cafe6
+                }
+                
+            ]}
+        />
+  
+   
+        </div>
+        <div className="slide-center">
+            <img className='center' src={menu} alt=""></img>
+        </div>
+        <div className="slide-right">
+            <UncontrolledCarousel
+            items={[
+                {
+                altText: 'Slide 1',
+                key: 1,
+                src:kiosk1
+                },
+                {
+                altText: 'Slide 2',
+                key: 2,
+                src: kiosk2
+                },
+                {
+                altText: 'Slide 3',
+                key: 3,
+                src: kiosk3
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 4,
+                    src: kiosk4
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 5,
+                    src: kiosk5
+                },
+                {
+                    altText: 'Slide 4',
+                    key: 6,
+                    src: kiosk6
+                }
+                
+            ]}
+        />
+  </div>
+  </div>
+  <div>
+    <img className="left-arrow" src={left} alt=""></img>
+  </div>
+  <div className="">
+    <img className='right-arrow' src={right} alt=""></img>
+  </div>
+  </>
+ );
+ 
+}
+export default Order;

@@ -1,0 +1,117 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import Model from '../images/cafe-model.webp';
+import  Xpress from '../images/xpress.webp';
+import { Badge, Container } from 'reactstrap';
+import Circular from './Circular';
+function Franchise(){
+  const{register,handleSubmit,formState:{errors}}=useForm();
+  const onSubmit=(data)=>console.log(data);
+  return(
+    <>
+    <p className='franchise-title'>Franchise</p>
+    <Container className='business'>
+      <p>Are you looking for an exciting new business opportunity 
+        in Food & Beverage Industry? Why not become a franchise 
+        partner with us! Our brand is expanding rapidly and 
+        we're looking for partners who share our passion for 
+        excellence. Contact us today to learn more about how 
+        you can join our team and become a part of our success story!</p>
+    </Container>
+    <Circular/>
+    <p className='joining'>Apply for Franchise</p>
+     <Container className='we-are'>
+      <p> We are excited to hear that you are interested in 
+                joining our team. Please fill out our<br/> 
+                application and we will be in touch with you soon.</p>
+    </Container>
+    
+    <div className='title'></div>
+    <Container className='divide'>
+    <div className='inputs'>
+      <form onSubmit={handleSubmit((onSubmit)
+          )}>
+          
+          <label className="franchise-form" for="cityName">Desired City</label>
+          <input{...register('cityName',{required:'City name is required',minLength:{
+            value:4,
+            message:"minimum 4 characters expected"
+          }})}
+          type='text' placeholder='City name'/>
+          
+          <label className="franchise-form" for="lName">Last name</label>
+          <input{...register('lName',{required:'Last name is required'})}
+          type='text' placeholder='Lastname'/>
+          {errors?.lName&&<p>{errors.lName.message}</p>}
+          
+          <label className="franchise-form" for="email">Email*</label>
+          <input{...register('email',{required:'Email is required'
+          })}
+          type='text' placeholder='Email*'/>
+        </form>
+    </div>
+    <div className='inputs2'>
+    <form onSubmit={handleSubmit((onSubmit)
+            
+          )}>
+            <label className="franchise-form" for="fName">First name</label>
+          <input{...register('fName',{required:'First name is required',minLength:{
+            value:4,
+            message:"minimum 4 characters expected"
+          }})}
+          type='text' placeholder='Firstname'/>
+          {errors?.fName&&<p>{errors.fName.message}</p>}
+
+          <label className="franchise-form" for="phone">Phone</label>
+          <input{...register('phone',{required:'Phone number is required',minLength:{
+            value:10,
+            message:"minimum 10 characters expected"
+          }})}
+          type='number' placeholder='Phone'/>
+
+          <input className="franchise-form" type={"submit"} 
+          style={{backgroundColor:"#404d3c", color:"white" ,marginTop:"45px",
+          paddingRight:"100px",padding:"5px 50px 5px 50px"}}/>
+        </form>
+    </div>
+    </Container>
+          <div className=''>
+            <img className='background-images' src={Model} alt=''></img>
+          </div>
+          <div className='overlay-images'>
+          <p className='cafe-model1'>Cafe Model</p>
+          <ul >
+            <li>Area Required: Minimum 1200 sq ft</li>
+            <li>Franchise Period: 5 yrs</li>
+            <li>Franchise Fees: 25 Lakhs plus GST</li>
+            <li>Royalty: 5% on Monthly Sales.</li>
+            <li>Setup & Interior Cost: 30 to 50 Lakhs</li>
+            <li>Expected Monthly Sales: 15 to 20 Lakhs </li>
+            <li>ROI: 18 to 24 months.</li>
+          </ul>
+          <Badge className="br-more" href="#">Know more</Badge>
+          </div>
+
+          <div className='xpress'>
+            <img className='background-images' src={Xpress} alt=''></img>
+          </div>
+          <div className='overlay-images2'>
+          <p className='cafe-model1'>Xpress Outlet</p>
+          <ul >
+            <li>Area Required: Minimum 200 sq ft</li>
+            <li>Franchise Period: 5 yrs</li>
+            <li>Franchise Fees: 5 Lakhs plus GST</li>
+            <li>Royalty: 20K per month.</li>
+            <li>Total Investment: 15 to 18 Lakhs.</li>
+            <li>Expected Profit: 1 Lakh per month </li>
+            <li>ROI: 12 to 15 months.</li>
+          </ul>
+          <Badge className="br-more" href="#">Know more</Badge>
+          </div>
+    
+    
+    
+    </>
+  );
+}
+export default Franchise;

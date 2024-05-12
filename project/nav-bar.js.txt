@@ -1,0 +1,54 @@
+import React, {Component } from "react";
+import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom";
+import Home from './Home';
+import About from "./AboutUs";
+import Franchise from "./Franchise";
+import Menu from "./Menu";
+import Career from "./Career";
+import Contact from "./Contact";
+import logos from "../images/teavilla-logo.webp";
+
+class One extends Component{
+    render(){
+        return(
+            <Router>
+                <div className="App">
+                  
+                    <ul className="App-header teavilla">
+                        <li>
+                        <img className="logo" src={logos} alt=""></img>
+                        </li>
+                        <li className="tea">
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li className="tea">
+                            <Link to = "/about">About us</Link>
+                        </li>
+                        <li className="tea">
+                            <Link to ="/franchise">Franchise</Link>
+                        </li>
+                        <li className="tea">
+                            <Link to ="/menu">Menu</Link>
+                        </li>
+                        <li className="tea">
+                            <Link to ="/career">Career</Link>
+                        </li>
+                        <li className="tea">
+                            <Link to ="/contact">Contact Us</Link>
+                        </li>
+                    </ul>
+                    <Routes>
+                        <Route exact path='/' element={<Home/>}></Route>
+                        <Route exact path='/about' element={<About/>}></Route>
+                        <Route exact path='/franchise' element={<Franchise/>}></Route>
+                        <Route exact path='/menu' element={<Menu/>}></Route>
+                        <Route exact path='/career' element={<Career/>}></Route> 
+                        <Route exact path='/contact' element={<Contact/>}></Route>
+                    </Routes>
+                </div>
+            </Router>
+        );
+    }
+}
+export default One;
+

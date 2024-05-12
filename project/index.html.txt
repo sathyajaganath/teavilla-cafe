@@ -1,0 +1,174 @@
+import React from "react";
+import { NavItem,NavLink,Nav, Row,Col,Badge,Container} from "reactstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import teaVilla from '../Videos/teaVilla.mp4';
+import ReactPlayer from 'react-player';
+import et from '../images/et1.webp';
+import dna from '../images/dna.webp';
+import dh from '../images/dh.webp';
+import mid from '../images/mid-day.webp';
+import retail from '../images/retail-growth.webp';
+import opportunity from '../images/opportunity.webp';
+import Circular from "./Circular";
+function Welcome(){
+    return(
+        <>
+        <div className="taste">
+        <p className="wel">Welcome to Tea Villa Cafe!</p>
+        <p className="india">India's First Cafe Chain Since 2014, <br></br>Serving  
+        Delightful Teas & a Diverse<br></br> Menu that caters to every Palate.</p>
+        <Nav pills >
+                <NavItem className="order">
+                    <NavLink
+                    
+                    >
+                    Order Now
+                    </NavLink>
+                </NavItem>
+                <NavItem className="order">
+                    <NavLink href="#">
+                    View Our Menu
+                    </NavLink>
+                </NavItem>
+                
+        </Nav>              
+        </div>
+        <div className="et">
+                 Featured in 
+                 <a className="et2"
+                 href="https://economictimes.indiatimes.com/magazines/panache/try-the-tea-villa-caf-for-fresh-waffles-during-breakfast/articleshow/54287112.cms">
+                    <img src={et} alt=""></img>
+                 </a>
+                 <a className="dna"
+                 href="https://www.dnaindia.com/lifestyle/report-new-in-town-watch-a-tea-bud-bloom-in-your-cup-2179651">
+                  
+                <img src={dna} alt="dna"></img>
+            </a>
+            <a className="dh"
+            href="https://www.deccanherald.com/india/karnataka/bengaluru/tea-love-jayanagar-701231.html">
+                <img src={dh} alt=""></img>
+            </a>
+            <a className="mid-day"
+            href="https://www.mid-day.com/mumbai-guide/mumbai-food/article/restaurant-review--a-villa-of-50-exotic-teas-in-vile-parle-16612166">
+                <img src={mid} alt=""></img>
+            </a>
+            <a className="retail"
+            href="https://www.retail4growth.com/news/tea-villa-cafe-brews-expansion-plans-4123">
+                <img src={retail} alt=""></img>
+            </a>
+            <a className="opportunity"
+            href="https://www.opportunityindia.com/article/determined-to-spread-wings-faster-via-franchise-model-9578">
+                <img src={opportunity} alt=""></img>
+            </a>
+        </div>
+        <Container fluid="lg">
+            <Row xs="2">
+                <Col className="one">
+                    <p className="drink">Eat, Drink,<br/> Relax: The <br/>Story of Tea<br/> Villa Cafe</p>
+                    <Badge className="read-more"
+                        color="light"
+                        href="#"
+                    >
+                      Read more  
+                    </Badge>
+                </Col>
+           
+            
+                <Col className="two">
+                <p className="established">Tea Villa Cafe, established in 2014, has emerged as 
+                    a groundbreaking culinary and tea destination. 
+                    Beginning with a single outlet in Mumbai, the 
+                    brand has rapidly expanded its footprint, 
+                    redefining the world of tea and cuisine.<br></br>
+                    <br></br>
+                    In a short span of five years, Tea Villa Cafe achieved 
+                    a remarkable milestone, expanding from a single outlet
+                    to a staggering 32 outlets in 10 cities across India, 
+                    and internationally in Singapore. This rapid growth is 
+                    a testament to the brand's popularity and innovation.</p>
+                </Col>
+            </Row>
+            
+        </Container>
+        <Container fluid="lg">
+            <Row xs={2}>
+                <Col className="three">
+                <p className="eat">Eat.</p>
+                <p className="multicuisine">Multicuisine Veg Restaurant</p>
+                <p className="our">Our menu features a variety of vegetarian dishes from <br/>Italian, 
+                                    Indian, Asian, Continental and more! Come and <br/>explore our 
+                                    diverse range of dishes.</p>
+                
+                    <Badge className="text-dark explore-more"
+                            color="light"
+                            href="#"
+                    >
+                        Explore More  
+                    </Badge>
+                                 
+
+                </Col>
+             
+                 <Col className="slide1">
+                   
+                </Col> 
+                
+            </Row>
+        </Container>
+        <Container fluid="lg">
+            <Row lg={2}>
+                <Col>
+                <div className='player-wrapper'>
+                    <ReactPlayer
+                        className='react-player'
+                        url={teaVilla}
+                        playing
+                        loop
+                        muted
+                        width='100%'
+                        height='100%'
+                    />
+                </div>
+                   {/* <video src={teaVilla} autoPlay loop muted /> */}
+
+                </Col> 
+                <Col className="auPride">
+                    <p className="drink2">Drink.</p>
+                    <p className="authentic">Authentic Tea Experience</p>
+                    <p className="pride">We take pride in our authentic tea experience and offer a <br/>
+                                     variety of teas, coffees & other beverages from around<br/>
+                                     the world.</p>
+                    <Badge className="text-dark learn-more"
+                            color="light" 
+                            href="#"
+                    >
+                        Learn More  
+                    </Badge>               
+                </Col>  
+            </Row>
+        </Container>
+        <Container>
+            <Row lg={2}>
+                <Col>
+                    <p className="relax">Relax</p>
+                    <p className="cozy">Cozy & Serene Ambience</p>
+                    <p className="step">Step inside Tea Villa Cafe and you'll be transported into a <br/>
+                    world of cozy charm and inviting warmth. Our<br/>
+                     comfortable seating and charming decor make it the<br/>
+                      perfect spot to catch up with old friends or enjoy a meal<br/>
+                       with loved ones. Whether you're here for breakfast, lunch <br/>
+                       or dinner, you'll feel right at home in our cozy and relaxing <br/>
+                       atmosphere.</p>
+                </Col>
+                <Col className="slide2">
+
+                </Col>
+
+            </Row>
+        </Container>
+        <Circular/>
+        </>
+   
+    );
+}
+export default Welcome;
